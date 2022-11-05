@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Place/Place.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Place/Place.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -40,6 +39,9 @@
       <workItem from="1667496730548" duration="2917000" />
       <workItem from="1667619902023" duration="131000" />
       <workItem from="1667620078007" duration="46000" />
+      <workItem from="1667620603695" duration="31000" />
+      <workItem from="1667620638749" duration="15000" />
+      <workItem from="1667620673515" duration="985000" />
     </task>
     <servers />
   </component>
