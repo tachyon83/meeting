@@ -3,7 +3,7 @@ import {Place} from "./Place"
 import {Point} from 'geojson'
 import {CommonUtils} from "../../utils/CommonUtils";
 
-class PlaceLogicCls {
+export class PlaceLogicCls {
     private repo = AppDataSource.getRepository(Place)
 
     async create(data){
@@ -40,5 +40,3 @@ class PlaceLogicCls {
             .getMany()
     }
 }
-
-export const PlaceLogic = new PlaceLogicCls()

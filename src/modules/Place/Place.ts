@@ -1,7 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import {Column, Entity, Index, PrimaryGeneratedColumn} from 'typeorm'
 import { CommonEntity } from '../Common/CommonEntity'
 
 @Entity()
+@Index('idx', ['location'], { unique: false, spatial: true })
 export class Place extends CommonEntity {
     @PrimaryGeneratedColumn({ type: 'int' })
     readonly id: number

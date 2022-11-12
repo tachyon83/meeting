@@ -4,7 +4,7 @@ import { ServerOptions } from './configs/config.common'
 import { ContainerKeys } from './utils/enums'
 import Container from 'typedi'
 import PlaceController from "./controllers/place.controller";
-import {PlaceLogic} from "./modules/Place/logic";
+import {PlaceLogicCls} from "./modules/Place/logic";
 
 async function startServer() {
   AppDataSource.initialize()
@@ -14,7 +14,7 @@ async function startServer() {
       Container.set(ContainerKeys.ServerOption, ServerOptions)
 
       const app = new App([
-          new PlaceController(PlaceLogic),
+          new PlaceController(new PlaceLogicCls()),
       ])
       app.listen()
     })
