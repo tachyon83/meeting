@@ -24,9 +24,9 @@ class CommonUtilsCls {
 
   locationConverter(location: string): string {
     const p = location
-        .split(',')
-        .map((v) => v.trim())
-        .join(' ')
+      .split(',')
+      .map((v) => v.trim())
+      .join(' ')
     return `POINT(${p})`
   }
 }

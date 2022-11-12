@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment="restore lost files">
+    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment="[fix] mysql2, eslint added">
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configs/ormconfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/ormconfig.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Place/Place.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Place/Place.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/place.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/place.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Place/logic.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Place/logic.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/place.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/place.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/CommonUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/CommonUtils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +37,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="prettier.import.notification.dismissed" value="true" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -64,7 +71,10 @@
       <workItem from="1667696310096" duration="801000" />
       <workItem from="1668259366226" duration="1777000" />
       <workItem from="1668273887975" duration="301000" />
-      <workItem from="1668278156027" duration="749000" />
+      <workItem from="1668278156027" duration="1331000" />
+      <workItem from="1668279874851" duration="709000" />
+      <workItem from="1668280701710" duration="146000" />
+      <workItem from="1668280860509" duration="671000" />
     </task>
     <task id="LOCAL-00001" summary="restore lost files">
       <created>1667622346105</created>
@@ -73,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667622346105</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[fix] mysql2, eslint added">
+      <created>1668279303213</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668279303213</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,7 +110,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="restore lost files" />
-    <option name="LAST_COMMIT_MESSAGE" value="restore lost files" />
+    <MESSAGE value="[fix] mysql2, eslint added" />
+    <option name="LAST_COMMIT_MESSAGE" value="[fix] mysql2, eslint added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
