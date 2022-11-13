@@ -3,27 +3,28 @@ const Router = express.Router
 
 import requestHandler from './request.handler'
 import { jwtAuth } from '../utils/jwtAuthMiddleware'
+import { PlaceService } from '../services/place.service'
 
 export default class PlaceController {
   path = '/place'
   router = Router()
-  service
+  service: PlaceService
 
-  constructor(service) {
-    this.init(service)
+  constructor() {
+    this.init()
   }
 
-  init(service) {
+  init() {
     const router = Router()
 
-    router.post('/', requestHandler(this.listPlaces))
+    router.post('/', requestHandler(this.list))
     // router.get('/', jwtAuth, requestHandler(this.getPoint))
 
     this.router.use(this.path, router)
-    this.service = service
+    this.service = new PlaceService()
   }
 
-  listPlaces = async (req, res) => {
+  list = async (req: express.Request, res) => {
     return this.service.list(req.body)
   }
 }
