@@ -22,7 +22,7 @@ export default class App {
   }
 
   listen() {
-    const port = process.env.PORT || 3005
+    const port = process.env.PORT || 3000
     this.app.listen(port, () => {
       console.log(`App started listening on the port #:${port}`)
     })
@@ -42,6 +42,9 @@ export default class App {
       next()
     })
 
+    this.app.get('/ping', async (req: express.Request, res: express.Response) =>
+      res.status(200).json('pong')
+    )
     this.app.use('/place', placeRouter)
   }
 
