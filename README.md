@@ -1,7 +1,7 @@
 # meeting
 
 ---
-can have 2 docker containers: server and db 
+can have 2 docker containers: server and db. 
 docker setting
 - choose your port number, db password, ... and others.
 - `docker build . -t [repo name]`
