@@ -3,8 +3,7 @@ import * as express from 'express'
 import { errorHandler } from './middlewares/error.handler'
 import { notFoundHandler } from './middlewares/not.found.handler'
 import Context from './configs/Context'
-
-const Router = express.Router
+import placeRouter from './routes/place.router'
 
 export default class App {
   app
@@ -13,11 +12,11 @@ export default class App {
   //   aspectSwitch: false,
   // }
 
-  constructor(controllers) {
+  constructor() {
     this.app = express()
 
     this.initMiddlewares()
-    this.initControllers(controllers)
+    this.initRouters()
     this.initErrorHandlers()
     this.initNotFoundHandler()
   }
@@ -37,19 +36,13 @@ export default class App {
     this.app.use(express.json())
   }
 
-  initControllers(controllers) {
-    const router = Router()
-
+  initRouters() {
     this.app.use((req: express.Request, res, next) => {
       Context.bindRequestContext(req)
       next()
     })
 
-    controllers.forEach(controller => {
-      router.use(controller.router)
-    })
-
-    this.app.use('/', router)
+    this.app.use('/place', placeRouter)
   }
 
   initErrorHandlers() {

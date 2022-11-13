@@ -16,6 +16,7 @@ export class PlaceService {
       location: this.locationConverter(location),
     })
     await this.repo.insert(inst)
+    return this.repo.findOne({ where: { id: inst.id } })
   }
 
   async list(data) {

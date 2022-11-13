@@ -12,7 +12,7 @@ async function startServer() {
 
       Container.set(ContainerKeys.ServerOption, ServerOptions)
 
-      const app = new App([new PlaceController()])
+      const app = new App()
       app.listen()
     })
     .catch((error) => console.log(error))
