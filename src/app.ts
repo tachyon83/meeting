@@ -4,6 +4,7 @@ import { errorHandler } from './middlewares/error.handler'
 import { notFoundHandler } from './middlewares/not.found.handler'
 import Context from './configs/Context'
 import placeRouter from './routes/place.router'
+import userRouter from './routes/user.router'
 
 export default class App {
   app
@@ -23,9 +24,7 @@ export default class App {
 
   listen() {
     const port = process.env.PORT || 3000
-    this.app.listen(port, () => {
-      console.log(`App started listening on the port #:${port}`)
-    })
+    this.app.listen(port, () => console.log(`App started listening on the port #:${port}`))
   }
 
   getServer() {
@@ -37,15 +36,14 @@ export default class App {
   }
 
   initRouters() {
-    this.app.use((req: express.Request, res, next) => {
-      Context.bindRequestContext(req)
-      next()
-    })
+    // this.app.use((req: express.Request, res, next) => {
+    //   Context.bindRequestContext(req)
+    //   next()
+    // })
 
-    this.app.get('/ping', async (req: express.Request, res: express.Response) =>
-      res.status(200).json('pong')
-    )
+    this.app.get('/ping', async (req: express.Request, res: express.Response) => res.status(200).json('pong'))
     this.app.use('/place', placeRouter)
+    this.app.use('/user', userRouter)
   }
 
   initErrorHandlers() {
