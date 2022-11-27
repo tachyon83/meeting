@@ -7,7 +7,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm'
-import { CommonUtils } from '../../utils/CommonUtils'
+import { CommonUtils } from '../utils/CommonUtils'
 
 export abstract class CommonEntity extends BaseEntity {
   // @CreateDateColumn({ type: 'datetime' })

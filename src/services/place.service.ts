@@ -1,5 +1,5 @@
 import { AppDataSource } from '../data-source'
-import { Place } from '../modules/Place/Place'
+import { Place } from '../modules/Place'
 import { CommonUtils } from '../utils/CommonUtils'
 import { Repository } from 'typeorm'
 
@@ -12,11 +12,9 @@ export class PlaceService {
 
   async create(data) {
     const { location } = data
-    const inst = await this.repo.create({
-      location: this.locationConverter(location),
-    })
+    const inst = await this.repo.create({ location: this.locationConverter(location) })
     await this.repo.insert(inst)
-    return this.repo.findOne({ where: { id: inst.id } })
+    return this.repo.findOne({ where: { placeId: inst.placeId } })
   }
 
   async list(data) {

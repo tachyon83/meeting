@@ -1,5 +1,5 @@
 export interface ICommonResponse {
-  data: Object
-  message: string
-  accessToken: string
+  data?: Object
+  message?: string
+  accessToken?: string
 }
