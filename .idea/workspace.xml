@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment="[feat] place test code">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment="[feat] docker setting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configs/ormconfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/ormconfig.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +72,8 @@
       <workItem from="1668310640026" duration="5083000" />
       <workItem from="1668321132412" duration="441000" />
       <workItem from="1668322144107" duration="3598000" />
-      <workItem from="1668327706277" duration="1311000" />
+      <workItem from="1668327706277" duration="1681000" />
+      <workItem from="1669063368927" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="restore lost files">
       <created>1667622346105</created>
@@ -112,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668316376783</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[feat] docker setting">
+      <created>1668330487968</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668330487968</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +141,8 @@
     <MESSAGE value="[fix] mysql2, prettier added" />
     <MESSAGE value="[feat] 주어진 좌표 주변 검색 기능 구현" />
     <MESSAGE value="[setting] workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="[setting] workspace.xml" />
+    <MESSAGE value="[feat] docker setting" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] docker setting" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
