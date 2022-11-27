@@ -5,14 +5,14 @@ export enum JWT_SUBJECT {
 
 export interface IJwtClaims {
   issuer?: string
-  expiresIn: string
-  subject: JWT_SUBJECT
+  expiresIn?: string
+  subject?: JWT_SUBJECT
 }
 
-export function jwtClaims(expiresIn: string, subject: JWT_SUBJECT): IJwtClaims {
+export function jwtClaims(claims?: IJwtClaims): IJwtClaims {
   return {
-    issuer: process.env.JWT_ISSUER,
-    expiresIn,
-    subject,
+    issuer: claims?.issuer ?? process.env.JWT_ISSUER,
+    expiresIn: claims?.expiresIn ?? '5m',
+    subject: claims?.subject ?? JWT_SUBJECT.ACCESS,
   }
 }

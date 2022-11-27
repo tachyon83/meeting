@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment="[feat] docker setting">
+    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment="[fix] workspace.xml">
+      <change afterPath="$PROJECT_DIR$/src/exceptions/jwt/jwtNotExists.exception.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/jwt/jwtTest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configs/jwtSettings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/jwtSettings.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/exception.messages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/exception.messages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/jwt/exception.messages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/jwt/exception.messages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/jwt/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/jwt/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/user.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/user.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Place.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Place.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/jwt/jwtAuthMiddleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/jwt/jwtAuthMiddleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/jwt/jwtUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/jwt/jwtUtils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +54,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettier.import.notification.dismissed" value="true" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -74,6 +88,9 @@
       <workItem from="1668322144107" duration="3598000" />
       <workItem from="1668327706277" duration="1681000" />
       <workItem from="1669063368927" duration="15000" />
+      <workItem from="1669536277075" duration="1853000" />
+      <workItem from="1669556799065" duration="8000" />
+      <workItem from="1669556827427" duration="5100000" />
     </task>
     <task id="LOCAL-00001" summary="restore lost files">
       <created>1667622346105</created>
@@ -117,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668330487968</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[fix] workspace.xml">
+      <created>1669536684724</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669536684724</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +166,8 @@
     <MESSAGE value="[feat] 주어진 좌표 주변 검색 기능 구현" />
     <MESSAGE value="[setting] workspace.xml" />
     <MESSAGE value="[feat] docker setting" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] docker setting" />
+    <MESSAGE value="[fix] workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="[fix] workspace.xml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
