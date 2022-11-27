@@ -1,9 +1,9 @@
 import * as jwt from 'jsonwebtoken'
-import { jwtClaims, IJwtClaims } from '../configs/jwtSettings'
-import { AppDataSource } from '../data-source'
-import { User } from '../modules/User/User'
+import { IJwtClaims, jwtClaims } from '../../configs/jwtSettings'
+import { AppDataSource } from '../../data-source'
+import { User } from '../../modules/User'
 
-export interface IJwtVerificaitonResponse {
+export interface IJwtVerificationResponse {
   jwtVerificationError: string | null
   decodedUserId: number | null
 }
@@ -20,8 +20,8 @@ export function sign(payload, options: IJwtClaims) {
 export async function verify(
   token,
   options?
-): Promise<IJwtVerificaitonResponse> {
-  const jwtVerificationResponse: IJwtVerificaitonResponse = {
+): Promise<IJwtVerificationResponse> {
+  const jwtVerificationResponse: IJwtVerificationResponse = {
     jwtVerificationError: null,
     decodedUserId: null,
   }
@@ -34,14 +34,17 @@ export async function verify(
       }
 
       if (decoded.hasOwnProperty('userId')) {
-        const user = await AppDataSource.getRepository(User).findOne({
-          where: { id: decoded.userId },
-        })
+        // const user = await AppDataSource.getRepository(User).findOne({
+        //   where: { userId: decoded.userId },
+        // })
 
-        if (user) {
-          jwtVerificationResponse.decodedUserId = user.id
-          return resolve(jwtVerificationResponse)
-        }
+        // if (user) {
+        //   jwtVerificationResponse.decodedUserId = user.userId
+        //   return resolve(jwtVerificationResponse)
+        // }
+
+        jwtVerificationResponse.decodedUserId = decoded.userId
+        return resolve(jwtVerificationResponse)
       }
 
       jwtVerificationResponse.jwtVerificationError = 'JsonWebTokenError'
