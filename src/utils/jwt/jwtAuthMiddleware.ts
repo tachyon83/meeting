@@ -7,16 +7,18 @@ export const jwtAuth = async (
   res: express.Response,
   next: express.NextFunction
 ) => {
-  const accessToken = req.headers[process.env.JWT_ACCESS_TOKEN]
-  const refreshToken = req.headers[process.env.JWT_REFRESH_TOKEN]
+  const accessToken =
+    req.headers[process.env.JWT_ACCESS_TOKEN || 'jwt_access_token']
+  const refreshToken =
+    req.headers[process.env.JWT_REFRESH_TOKEN || 'jwt_refresh_token']
 
-  if (!accessToken || !refreshToken)
-    throw new JwtException.JwtNotExistsException()
+  if (!accessToken && !refreshToken)
+    return next(new JwtException.JwtNotExistsException())
 
   try {
-    req.ctx.user = (await verify(accessToken)) as IJwtPayload
+    req.user = (await verify(accessToken)) as IJwtPayload
     return next()
   } catch (e) {
-    throw e
+    return next(e)
   }
 }

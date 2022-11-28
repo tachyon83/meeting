@@ -11,17 +11,23 @@ export interface IJwtPayload {
 export function sign(payload) {
   if (typeof payload !== 'object')
     throw new Error('JWT payload must be of type object')
-  return jwt.sign(payload, process.env.JWT_SECRET, { ...jwtClaims() })
+  return jwt.sign(payload, process.env.JWT_SECRET || 'jwt secret', {
+    ...jwtClaims(),
+  })
 }
 
 export async function verify(token, options?): Promise<IJwtPayload> {
-  return jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-    return new Promise(async (resolve, reject) =>
-      err || typeof decoded !== 'object' || !decoded.hasOwnProperty('userId')
-        ? reject(new JwtException.JwtErrorException())
-        : resolve(decoded)
-    )
-  })
+  return jwt.verify(
+    token,
+    process.env.JWT_SECRET || 'jwt secret',
+    (err, decoded) => {
+      return new Promise(async (resolve, reject) =>
+        err || typeof decoded !== 'object' || !decoded.hasOwnProperty('userId')
+          ? reject(new JwtException.JwtErrorException())
+          : resolve(decoded)
+      )
+    }
+  )
 }
 
 export async function updateToken(refreshToken) {
