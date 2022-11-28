@@ -6,7 +6,7 @@ const userController = new UserController()
 
 router.post('/', userController.create)
 router.post('/login', userController.login)
-// router.get('/', jwtAuth, userController.get)
+router.get('/', jwtAuth, userController.get)
 // router.patch('/', jwtAuth, userController.update)
 
 export default router
