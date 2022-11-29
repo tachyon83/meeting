@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment=" [fix] fix on index.ts">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment=" [feat] docker compose">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/jwt/jwtTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/jwt/jwtTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/jwt/jwtUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/jwt/jwtUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/place.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/place.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +89,9 @@
       <workItem from="1669687504329" duration="31000" />
       <workItem from="1669687539071" duration="1826000" />
       <workItem from="1669703463258" duration="4939000" />
+      <workItem from="1669735681292" duration="62000" />
+      <workItem from="1669735774287" duration="185000" />
+      <workItem from="1669736023230" duration="172000" />
     </task>
     <task id="LOCAL-00001" summary="restore lost files">
       <created>1667622346105</created>
@@ -222,7 +226,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669727869535</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary=" [feat] docker compose">
+      <created>1669732644112</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1669732644112</updated>
+    </task>
+    <task id="LOCAL-00021" summary=" [feat] docker compose">
+      <created>1669736169842</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1669736169842</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +280,8 @@
     <MESSAGE value=" [fix] env variables hidden" />
     <MESSAGE value=" [fix] fix on place/list interface" />
     <MESSAGE value=" [fix] fix on index.ts" />
-    <option name="LAST_COMMIT_MESSAGE" value=" [fix] fix on index.ts" />
+    <MESSAGE value=" [feat] docker compose" />
+    <option name="LAST_COMMIT_MESSAGE" value=" [feat] docker compose" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
