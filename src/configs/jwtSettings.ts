@@ -11,7 +11,7 @@ export interface IJwtClaims {
 
 export function jwtClaims(claims?: IJwtClaims): IJwtClaims {
   return {
-    issuer: claims?.issuer ?? (process.env.JWT_ISSUER || 'secret secretary'),
+    issuer: claims?.issuer ?? process.env.JWT_ISSUER,
     expiresIn: claims?.expiresIn ?? '5m',
     subject: claims?.subject ?? JWT_SUBJECT.ACCESS,
   }

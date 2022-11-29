@@ -40,7 +40,7 @@ interface IHandlerInput {
 }
 
 class SupertestRequest {
-  request = supertest(new App().app)
+  request = supertest(new App().getServer())
 
   handler(res: IHandlerInput): IRequestOutput {
     const r = JSON.parse(res.text)

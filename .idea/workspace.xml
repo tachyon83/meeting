@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment="[feat] place &amp; user test" />
+    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment="[minor] workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configs/dotenvConfig.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configs/jwtSettings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/jwtSettings.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configs/ormconfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/ormconfig.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/jwt/jwtAuthMiddleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/jwt/jwtAuthMiddleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/jwt/jwtUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/jwt/jwtUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testUtil.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/testUtil.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +47,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettier.import.notification.dismissed" value="true" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -78,7 +87,11 @@
       <workItem from="1669619673044" duration="5134000" />
       <workItem from="1669650298068" duration="40000" />
       <workItem from="1669650386663" duration="2117000" />
-      <workItem from="1669653944166" duration="2465000" />
+      <workItem from="1669653944166" duration="3557000" />
+      <workItem from="1669686920295" duration="459000" />
+      <workItem from="1669687477135" duration="19000" />
+      <workItem from="1669687504329" duration="31000" />
+      <workItem from="1669687539071" duration="1826000" />
     </task>
     <task id="LOCAL-00001" summary="restore lost files">
       <created>1667622346105</created>
@@ -185,11 +198,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669656665109</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="[minor] workspace.xml">
+      <created>1669657361672</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669657361672</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -218,7 +241,8 @@
     <MESSAGE value="[feat] expansion and fixes on user module" />
     <MESSAGE value="[feat] place util" />
     <MESSAGE value="[feat] place &amp; user test" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] place &amp; user test" />
+    <MESSAGE value="[minor] workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="[minor] workspace.xml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
