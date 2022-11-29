@@ -27,8 +27,8 @@ export class PlaceService {
   async list(data: IPlaceListInput) {
     // radius in kilometers
     const { location, radius, numPoints } = data
-    const diff = (Math.min(radius, 50) * 1.3) / 111
-    const size = Math.min(numPoints, 500)
+    const diff = (Math.min(radius ?? 50, 50) * 1.3) / 111
+    const size = Math.min(numPoints ?? 500, 500)
     const [lat, lng] = location.split(',').map((e) => Number(e))
 
     return this.repo
