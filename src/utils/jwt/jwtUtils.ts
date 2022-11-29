@@ -1,55 +1,28 @@
 import * as jwt from 'jsonwebtoken'
-import { IJwtClaims, jwtClaims } from '../../configs/jwtSettings'
-import { AppDataSource } from '../../data-source'
-import { User } from '../../modules/User'
+import { jwtClaims } from '../../configs/jwtSettings'
+import * as JwtException from '../../exceptions/jwt/index'
 
-export interface IJwtVerificationResponse {
-  jwtVerificationError: string | null
-  decodedUserId: number | null
+export interface IJwtPayload {
+  userId: number
+  username: string
 }
 
-export function sign(payload, options: IJwtClaims) {
-  const { expiresIn, subject, ...restOptions } = options
-
+// payload must be of type object!
+export function sign(payload) {
+  if (typeof payload !== 'object')
+    throw new Error('JWT payload must be of type object')
   return jwt.sign(payload, process.env.JWT_SECRET, {
-    ...jwtClaims(expiresIn, subject),
-    ...restOptions,
+    ...jwtClaims(),
   })
 }
 
-export async function verify(
-  token,
-  options?
-): Promise<IJwtVerificationResponse> {
-  const jwtVerificationResponse: IJwtVerificationResponse = {
-    jwtVerificationError: null,
-    decodedUserId: null,
-  }
-
+export async function verify(token, options?): Promise<IJwtPayload> {
   return jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-    return new Promise(async (resolve, reject) => {
-      if (err) {
-        jwtVerificationResponse.jwtVerificationError = err.name
-        return reject(jwtVerificationResponse)
-      }
-
-      if (decoded.hasOwnProperty('userId')) {
-        // const user = await AppDataSource.getRepository(User).findOne({
-        //   where: { userId: decoded.userId },
-        // })
-
-        // if (user) {
-        //   jwtVerificationResponse.decodedUserId = user.userId
-        //   return resolve(jwtVerificationResponse)
-        // }
-
-        jwtVerificationResponse.decodedUserId = decoded.userId
-        return resolve(jwtVerificationResponse)
-      }
-
-      jwtVerificationResponse.jwtVerificationError = 'JsonWebTokenError'
-      return reject(jwtVerificationResponse)
-    })
+    return new Promise(async (resolve, reject) =>
+      err || typeof decoded !== 'object' || !decoded.hasOwnProperty('userId')
+        ? reject(new JwtException.JwtErrorException())
+        : resolve(decoded)
+    )
   })
 }
 

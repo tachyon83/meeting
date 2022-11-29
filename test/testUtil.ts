@@ -5,8 +5,6 @@ import App from '../src/app'
 
 jest.setTimeout(20000)
 
-const request = supertest(new App().app)
-
 export function setNow(momentParsableString: string = '2020-01-01 00:00:00') {
   const momentToReturn = moment(momentParsableString)
   jest
@@ -14,64 +12,55 @@ export function setNow(momentParsableString: string = '2020-01-01 00:00:00') {
     .mockImplementation(() => momentToReturn.clone())
 }
 
-export interface ISupertestObject {
-  [key: string]: string | number
+interface IJwt {
+  key: string
+  value: string
 }
 
-export interface ISupertestSettingArray extends Array<[string, string]> {}
-
-export enum SupertestMethod {
-  POST = 'POST',
-  GET = 'GET',
-  PATCH = 'PATCH',
-  PUT = 'PUT',
-  DELETE = 'DELETE',
+interface IRequestInput {
+  header?: IJwt
+  path: string
+  body?: Object
+  query?: Object
 }
 
-export interface ISupertestInput {
-  query?: ISupertestObject
-  param?: string
-  body?: ISupertestObject
-  method: SupertestMethod
-  pathIn: string
-  settings?: ISupertestSettingArray
+interface IData {
+  [key: string]: string
 }
 
-export interface ISupertestOutput {
+interface IRequestOutput {
+  statusCode: number
+  data?: IData
+  message?: string
+}
+
+interface IHandlerInput {
   statusCode: number
   text: string
 }
 
-export function supertestWrapper(input: ISupertestInput): ISupertestOutput {
-  let next = request
-  console.log(49, next, input)
-  const { query, param, body, method, pathIn, settings } = input
-  const path = pathIn + param ?? ''
+class SupertestRequest {
+  request = supertest(new App().getServer())
 
-  switch (method) {
-    case SupertestMethod.POST:
-      next = request.post(path)
-      break
-    case SupertestMethod.GET:
-      next = request.get(path)
-      break
-    default:
-      break
-  }
-  console.log(63, next)
-  if (settings && settings.length > 0) {
-    for (const setting of settings) {
-      next = next.set(setting[0], setting[1])
+  handler(res: IHandlerInput): IRequestOutput {
+    const r = JSON.parse(res.text)
+    if (res.statusCode === 200) {
+      return { statusCode: res.statusCode, data: r.data }
     }
+    return { statusCode: res.statusCode, message: r.message }
   }
-  console.log(69, next)
-  if (body) {
-    next = next.send(body)
-  }
-  if (query) {
-    next = next.query(query)
-  }
-  console.log(76, next)
 
-  return next.end() as ISupertestOutput
+  async postRequestWithJwt(data: IRequestInput): Promise<IRequestOutput> {
+    const { header, path, body } = data
+    return this.handler(
+      await this.request.post(path).set(header.key, header.value).send(body)
+    )
+  }
+
+  async postRequest(data: IRequestInput): Promise<IRequestOutput> {
+    const { path, body } = data
+    return this.handler(await this.request.post(path).send(body))
+  }
 }
+
+export const TestRequest = new SupertestRequest()
