@@ -2,9 +2,9 @@
 
 ---
 how to run via DOCKER-COMPOSE
-`docker-compose up`
-`docker compose down`
-`docker rmi meeting_app`
+- `docker-compose up`
+- `docker compose down`
+- `docker rmi meeting_app`
 
 ---
 can have 2 docker containers: server and db.  
