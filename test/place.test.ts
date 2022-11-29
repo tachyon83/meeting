@@ -1,5 +1,6 @@
 import { AppDataSource } from '../src/data-source'
 import { setNow, TestRequest } from './testUtil'
+import * as jwtSetting from '../src/configs/jwtSettings'
 
 beforeAll(async () => await AppDataSource.initialize())
 afterAll(async () => await AppDataSource.destroy())
@@ -12,7 +13,7 @@ describe('point', () => {
   })
 
   test('place test1', async () => {
-    setNow('2022-04-01')
+    setNow('2022-04-01 17:00:00')
 
     // u1
     const r1 = await TestRequest.postRequest({
@@ -21,6 +22,14 @@ describe('point', () => {
     })
     expect(r1.statusCode).toEqual(200)
     expect(r1.data.ok).toEqual(true)
+
+    jest.spyOn(jwtSetting, 'jwtClaims').mockImplementationOnce(() => {
+      return {
+        issuer: process.env.JWT_ISSUER,
+        expiresIn: '5s',
+        subject: jwtSetting.JWT_SUBJECT.ACCESS,
+      }
+    })
 
     // u1 login
     const r2 = await TestRequest.postRequest({
@@ -59,6 +68,15 @@ describe('point', () => {
       path: '/place',
       body: { location: '37.5250, 126.8971' },
     })
+
+    await new Promise((resolve) => setTimeout(resolve, 5001))
+    const e1 = await TestRequest.postRequestWithJwt({
+      header: { key: 'JWT_ACCESS_TOKEN', value: u1Token },
+      path: '/place',
+      body: { location: '37.5250, 126.8972' },
+    })
+    expect(e1.statusCode).toEqual(401)
+    expect(e1.message).toEqual('jwtExpired')
 
     // 아주 작은 반경
     const r4 = await TestRequest.postRequest({

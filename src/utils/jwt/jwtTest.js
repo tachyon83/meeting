@@ -13,5 +13,10 @@ const verified = jwt.verify(token, 'secret')
 console.log(10, verified, typeof verified)
 
 setTimeout(() => {
-  console.log(jwt.verify(token, 'secret'))
+  // console.log(jwt.verify(token, 'secret'))
+  try {
+    jwt.verify(token, 'secret')
+  } catch (e) {
+    console.log(18, e, typeof e, Object.keys(e), e.name, e.message, e.expiredAt)
+  }
 }, 2000)

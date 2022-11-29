@@ -20,7 +20,9 @@ export async function verify(token, options?): Promise<IJwtPayload> {
   return jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     return new Promise(async (resolve, reject) =>
       err || typeof decoded !== 'object' || !decoded.hasOwnProperty('userId')
-        ? reject(new JwtException.JwtErrorException())
+        ? err.name === 'TokenExpiredError'
+          ? reject(new JwtException.JwtExpiredException())
+          : reject(new JwtException.JwtErrorException())
         : resolve(decoded)
     )
   })
