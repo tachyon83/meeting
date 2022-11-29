@@ -9,8 +9,7 @@
 ---
 2. how to run via docker commands
 
-2 docker containers: server and db.  
-docker setting
+- 2 docker containers: server and db.  
 - choose your port number, db password, ... and others.
 - `docker build . -t [repo name]`
 - `docker pull mysql:8.0.23` (optional)
