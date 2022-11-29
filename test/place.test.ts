@@ -93,5 +93,14 @@ describe('point', () => {
       },
     })
     expect(r6.data).toHaveLength(2)
+
+    // radius, numPoints 없어도 동작 확인
+    const r7 = await TestRequest.postRequest({
+      path: '/place/list',
+      body: {
+        location: '37.49735, 127.02823',
+      },
+    })
+    expect(r7.data.length).toBeGreaterThan(0)
   })
 })
