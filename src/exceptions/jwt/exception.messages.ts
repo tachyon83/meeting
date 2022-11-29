@@ -1,5 +1,5 @@
 export default {
-  jwtError: 'JsonWebToken Error',
-  jwtExpired: 'JsonWebToken Expired',
-
+  jwtError: 'jwtError',
+  jwtExpired: 'jwtExpired',
+  jwtNotExists: 'jwtNotExists',
 }
