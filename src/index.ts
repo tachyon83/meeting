@@ -3,7 +3,6 @@ import App from './app'
 import { ServerOptions } from './configs/config.common'
 import { ContainerKeys } from './utils/enums'
 import Container from 'typedi'
-import PlaceController from './controllers/place.controller'
 
 async function startServer() {
   AppDataSource.initialize()
