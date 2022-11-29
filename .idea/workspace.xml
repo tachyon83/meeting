@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment=" [fix] fix on place/list interface">
+    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment=" [fix] fix on index.ts">
       <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669726215189</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary=" [fix] fix on index.ts">
+      <created>1669727869535</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1669727869535</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +261,8 @@
     <MESSAGE value="[minor] workspace.xml" />
     <MESSAGE value=" [fix] env variables hidden" />
     <MESSAGE value=" [fix] fix on place/list interface" />
-    <option name="LAST_COMMIT_MESSAGE" value=" [fix] fix on place/list interface" />
+    <MESSAGE value=" [fix] fix on index.ts" />
+    <option name="LAST_COMMIT_MESSAGE" value=" [fix] fix on index.ts" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -20,8 +20,15 @@ WORKDIR /app
 COPY . .
 RUN npm i
 
+# would not work if github is not functional
+ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh /app
+
+# wait-for-it.sh
+#COPY wait-for-it.sh ./
+RUN chmod +x wait-for-it.sh
+
 # Docker Daemon Port Mapping
-EXPOSE 3005
+#EXPOSE 3005
 
 # Node ENV
-ENV NODE_ENV=development
+#ENV NODE_ENV=development
