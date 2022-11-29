@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment="[minor] workspace.xml">
+    <list default="true" id="70fd97c7-d3b4-4bd2-b334-569d9dd6a5c1" name="Changes" comment=" [fix] fix on place/list interface">
       <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/place.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/place.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/place.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/place.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669703541839</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary=" [fix] fix on place/list interface">
+      <created>1669726215189</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1669726215189</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +254,8 @@
     <MESSAGE value="[feat] place &amp; user test" />
     <MESSAGE value="[minor] workspace.xml" />
     <MESSAGE value=" [fix] env variables hidden" />
-    <option name="LAST_COMMIT_MESSAGE" value=" [fix] env variables hidden" />
+    <MESSAGE value=" [fix] fix on place/list interface" />
+    <option name="LAST_COMMIT_MESSAGE" value=" [fix] fix on place/list interface" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
