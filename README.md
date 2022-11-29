@@ -15,6 +15,7 @@ docker setting
 - `docker run -it --rm -p 3005:3000 --link [db container name] -e MYSQL_ROOT_PASSWORD=[your password] -e DB_HOST=[db container name] -e DB_PORT=3306 [repo name] npm test` (run test code)
 - `docker run -it --rm -p 3005:3000 --link mysql2 -e MYSQL_ROOT_PASSWORD=1234 -e DB_HOST=mysql2 -e DB_PORT=3306 meeting npm test`
 - `docker run -it --rm -p 3005:3000 --link [db container name] -e MYSQL_ROOT_PASSWORD=[your password] -e DB_HOST=[db container name] -e DB_PORT=3306 [repo name] npm start` (start server)
+- `docker run -d --name meeting -p 3005:3000 --link mysql2 -e MYSQL_ROOT_PASSWORD=1234 -e DB_HOST=mysql2 -e DB_PORT=3306 meeting npm start`
 
 - docker stop containers and remove images when done.
 
