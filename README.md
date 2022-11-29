@@ -1,13 +1,15 @@
 # meeting
 
 ---
-how to run via DOCKER-COMPOSE
+1. how to run via DOCKER-COMPOSE
 - `docker-compose up`
 - `docker compose down`
 - `docker rmi meeting_app`
 
 ---
-can have 2 docker containers: server and db.  
+2. how to run via docker commands
+
+2 docker containers: server and db.  
 docker setting
 - choose your port number, db password, ... and others.
 - `docker build . -t [repo name]`
