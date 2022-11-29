@@ -23,13 +23,11 @@ describe('point', () => {
     expect(r1.statusCode).toEqual(200)
     expect(r1.data.ok).toEqual(true)
 
-    jest.spyOn(jwtSetting, 'jwtClaims').mockImplementationOnce(() => {
-      return {
-        issuer: process.env.JWT_ISSUER,
-        expiresIn: '5s',
-        subject: jwtSetting.JWT_SUBJECT.ACCESS,
-      }
-    })
+    jest.spyOn(jwtSetting, 'jwtClaims').mockImplementationOnce(() => ({
+      issuer: process.env.JWT_ISSUER,
+      expiresIn: '5s',
+      subject: jwtSetting.JWT_SUBJECT.ACCESS,
+    }))
 
     // u1 login
     const r2 = await TestRequest.postRequest({
