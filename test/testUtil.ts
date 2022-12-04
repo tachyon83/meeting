@@ -25,7 +25,7 @@ interface IRequestInput {
 }
 
 interface IData {
-  [key: string]: string
+  [key: string]: string | { [key: string]: string }
 }
 
 interface IRequestOutput {
@@ -60,6 +60,27 @@ class SupertestRequest {
   async postRequest(data: IRequestInput): Promise<IRequestOutput> {
     const { path, body } = data
     return this.handler(await this.request.post(path).send(body))
+  }
+
+  async patchRequestWithJwt(data: IRequestInput): Promise<IRequestOutput> {
+    const { header, path, body } = data
+    return this.handler(
+      await this.request.patch(path).set(header.key, header.value).send(body)
+    )
+  }
+
+  async deleteRequestWithJwt(data: IRequestInput): Promise<IRequestOutput> {
+    const { header, path, body } = data
+    return this.handler(
+      await this.request.delete(path).set(header.key, header.value).send(body)
+    )
+  }
+
+  async getRequestWithJwt(data: IRequestInput): Promise<IRequestOutput> {
+    const { header, path, query } = data
+    return this.handler(
+      await this.request.get(path).set(header.key, header.value).query(query)
+    )
   }
 }
 
