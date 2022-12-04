@@ -36,7 +36,7 @@ describe('point', () => {
     })
     expect(r2.statusCode).toEqual(200)
     expect(r2.data.accessToken).not.toBeNull()
-    const u1Token = r2.data.accessToken
+    const u1Token = r2.data.accessToken as string
 
     // 신림
     const r3 = await TestRequest.postRequestWithJwt({
@@ -45,6 +45,20 @@ describe('point', () => {
       body: { location: '37.472, 126.9287' },
     })
     expect(r3.statusCode).toEqual(200)
+
+    // 용산 잘못된 좌표
+    const e0 = await TestRequest.postRequestWithJwt({
+      header: { key: 'JWT_ACCESS_TOKEN', value: u1Token },
+      path: '/place',
+      body: { location: '37.5302 126.9902' },
+    })
+    expect(e0.statusCode).toEqual(422)
+    const e01 = await TestRequest.postRequestWithJwt({
+      header: { key: 'JWT_ACCESS_TOKEN', value: u1Token },
+      path: '/place',
+      body: { location: '37.5302, alpha' },
+    })
+    expect(e01.statusCode).toEqual(422)
 
     // 용산
     await TestRequest.postRequestWithJwt({
