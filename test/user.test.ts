@@ -51,8 +51,16 @@ describe('user', () => {
     })
     expect(r5.statusCode).toEqual(200)
     expect(r5.data.accessToken).not.toBeNull()
+    const u1Token = r5.data.accessToken as string
 
-    // const res7 = await request.patch('/user').set('jwt_access_token', r4.data.jwt).send({ username: 'tom2'})
-    // const res4 = await request.get('/board').query({ boardId: r3.data.boardId})
+    // u1 get
+    const r6 = await TestRequest.getRequestWithJwt({
+      path: '/user',
+      header: { key: 'JWT_ACCESS_TOKEN', value: u1Token },
+    })
+    expect(r6.statusCode).toEqual(200)
+    expect(r6.data.favorites).toHaveLength(0)
+    const r6User = r6.data.user as { [key: string]: string }
+    expect(r6User.username).toEqual('abc')
   })
 })
