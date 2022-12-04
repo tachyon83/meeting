@@ -4,6 +4,7 @@ import { notFoundHandler } from './middlewares/not.found.handler'
 import Context from './configs/Context'
 import placeRouter from './routes/place.router'
 import userRouter from './routes/user.router'
+import favoriteRouter from './routes/favorite.router'
 
 export default class App {
   private app
@@ -48,6 +49,7 @@ export default class App {
     )
     this.app.use('/place', placeRouter)
     this.app.use('/user', userRouter)
+    this.app.use('/favorite', favoriteRouter)
   }
 
   initErrorHandlers() {
