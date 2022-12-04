@@ -1,4 +1,4 @@
-export interface IPlaceCreationInput {
+export interface IPlaceCreateInput {
   location: string
 }
 

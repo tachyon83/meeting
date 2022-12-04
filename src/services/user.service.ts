@@ -3,17 +3,20 @@ import * as UserException from '../exceptions/user/index'
 import * as UserUtil from '../utils/user/utils'
 import { IOkOuput } from '../interfaces/common.interface'
 import {
-  IUserCreationInput,
+  IUserCreateInput,
+  IUserGetOutput,
   IUserLoginInput,
   IUserLoginOutput,
 } from '../interfaces/user.interface'
 import { User } from '../modules/User'
 import * as JwtUtils from '../utils/jwt/jwtUtils'
+import { Favorite } from '../modules/Favorite'
 
 export default class UserService {
   private repo = AppDataSource.getRepository(User)
+  private favoriteRepo = AppDataSource.getRepository(Favorite)
 
-  async create(data: IUserCreationInput): Promise<IOkOuput> {
+  async create(data: IUserCreateInput): Promise<IOkOuput> {
     const { username, password, email } = data
 
     if (!UserUtil.isValidEmail(email))
@@ -53,12 +56,14 @@ export default class UserService {
     }
   }
 
-  async get(userId: number): Promise<User> {
+  async get(userId: number): Promise<IUserGetOutput> {
     const user = await this.repo.findOne({ where: { userId } })
     if (!user) throw new UserException.UserDoesNotExistException()
 
     user.password = undefined
-    return user
+
+    const favorites = await this.favoriteRepo.find({ where: { userId } })
+    return { user, favorites }
   }
 
   // async update(newUserName: string, userId: number): Promise<User> {
