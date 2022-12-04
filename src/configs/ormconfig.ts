@@ -1,5 +1,6 @@
 import { Place } from '../modules/Place'
 import { User } from '../modules/User'
+import { Favorite } from '../modules/Favorite'
 require('dotenv').config()
 
 module.exports = {
@@ -11,7 +12,7 @@ module.exports = {
   database: process.env.DB_DATABASE || process.env.CLEARDB_DATABASE,
   synchronize: false,
   logging: false,
-  entities: [Place, User],
+  entities: [Favorite, Place, User],
   migrations: [],
   subscribers: [],
   legacySpatialSupport: false,
