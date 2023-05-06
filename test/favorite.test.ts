@@ -94,6 +94,14 @@ describe('favorite', () => {
     expect(e3.statusCode).toEqual(401)
     expect(e3.message).toEqual('unAuthorized')
 
+    // u1 이 자신의 favorites 조회 성공 (3개)
+    const r41 = await TestRequest.getRequestWithJwt({
+      header: { key: 'JWT_ACCESS_TOKEN', value: u1Token },
+      path: '/favorite',
+    })
+    expect(r41.statusCode).toEqual(200)
+    expect(r41.data.length).toEqual(3)
+
     // u1 이 u1 favorite 삭제 성공
     const r5 = await TestRequest.deleteRequestWithJwt({
       header: { key: 'JWT_ACCESS_TOKEN', value: u1Token },
@@ -102,5 +110,13 @@ describe('favorite', () => {
     })
     expect(r5.statusCode).toEqual(200)
     expect(r5.data.ok).toEqual(true)
+
+    // u1 이 자신의 favorites 조회 성공 (2개)
+    const r51 = await TestRequest.getRequestWithJwt({
+      header: { key: 'JWT_ACCESS_TOKEN', value: u1Token },
+      path: '/favorite',
+    })
+    expect(r51.statusCode).toEqual(200)
+    expect(r51.data.length).toEqual(2)
   })
 })

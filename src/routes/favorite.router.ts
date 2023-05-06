@@ -4,6 +4,7 @@ import { jwtAuth } from '../utils/jwt/jwtAuthMiddleware'
 const router = express.Router()
 const favoriteController = new FavoriteController()
 
+router.get('/', jwtAuth, favoriteController.get)
 router.post('/', jwtAuth, favoriteController.create)
 router.patch('/', jwtAuth, favoriteController.update)
 router.delete('/', jwtAuth, favoriteController.delete)
