@@ -35,6 +35,10 @@ export class FavoriteService {
     return this.repo.findOne({ where: { favoriteId: inst.favoriteId } })
   }
 
+  async get(userId: number): Promise<Favorite[]> {
+    return this.repo.find({ where: { userId } })
+  }
+
   async update(data: IFavoriteUpdateInput, userId: number): Promise<Favorite> {
     const { location, favoriteId } = data
     if (!isLocationFormatValid(location))

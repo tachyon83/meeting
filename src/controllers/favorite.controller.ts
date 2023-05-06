@@ -21,6 +21,19 @@ export default class FavoriteController {
     }
   }
 
+  get = async (
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+  ) => {
+    try {
+      const data = await this.service.get(req.user.userId)
+      return res.status(200).json({ data })
+    } catch (e) {
+      next(e)
+    }
+  }
+
   update = async (
     req: express.Request,
     res: express.Response,
